@@ -4,7 +4,7 @@
 
 To run each service, you need to install modules. To do this, enter the command `npm ci`
 
-Next, you need to build each service by running the command `npm run build`
+Next, you need to build each service by running the command `npm run build` (we recommend starting with the sidebar-app service)
 
 And then enter the command to start the services `npm run start`
 
