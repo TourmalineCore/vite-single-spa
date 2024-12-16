@@ -16,3 +16,5 @@ You can test it:
 4. To see the changes, stop the service in which you made changes and enter the commands `npm run build` and `npm run start`
 
 So, we have a service that implements the sidebar (sidebar-app), and three services that the sidebar switches between (first-app, second-app and to-dos-ui-ss). Instead of repeating the sidebar in each of these three services, we implement it separately and pass the sidebar module into every one of them
+
+There is no hot reload when you change something in an app. You need t manually re-build it.
