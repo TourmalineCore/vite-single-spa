@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single SPA Root Config</title>
+  <!-- Includes SystemJS, a dynamic ES module loader required for Single-SPA to manage microfrontends. -->
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.12.1/dist/system.min.js"></script>
   <link rel="stylesheet" href="./src/index.css">
+   <!-- Defines the import map for the application. 
+       It maps microfrontend apps (app1, app2, to-dos) to their respective URLs, 
+       and maps dependencies like React and Single-SPA to external CDNs. -->
   <script type="systemjs-importmap">
     {
         "imports": {
           "@org/app1": "http://localhost:3001/dist/main.js",
           "@org/app2": "http://localhost:3002/dist/main.js",
           "@org/to-dos": "http://localhost:3003/dist/main.js",
-          "react": "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
-          "react-dom": "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+          "react": "https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js",
+          "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js",
           "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
         }
     }
   </script>
-  
   </head>
   <body>
     <div id="root">

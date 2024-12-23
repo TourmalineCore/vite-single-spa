@@ -17,31 +17,16 @@ declare global {
   }
 }
 
+// Configure the lifecycle methods for the microfrontend using single-spa-react
+// singleSpaReact wraps the React app and provides lifecycle hooks (bootstrap, mount, unmount)
 const lifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: ToDosPage,
+  rootComponent: ToDosPage, // Specify the root React component to render in this microfrontend
 })
 
+// Export the lifecycle functions for single-spa
+// These functions are used by the single-spa framework to manage this microfrontend
 export const {
-  bootstrap, mount, unmount,
+  bootstrap, mount, unmount, 
 } = lifecycles
-
-// ReactDOMClient
-//   .createRoot(document.getElementById(`root`)!)
-//   .render(
-//     <React.StrictMode>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route
-//             path="/to-dos"
-//             element={<ToDosPage />}
-//           />
-//           <Route
-//             path="/*"
-//             element={<HomePage />}
-//           />
-//         </Routes>
-//       </BrowserRouter>
-//     </React.StrictMode>,
-//   )
